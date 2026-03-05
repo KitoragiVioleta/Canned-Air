@@ -9,38 +9,36 @@ export function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg">
+    <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md md:p-5">
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-gradient-to-b from-accent/20 to-accent/5">
           <Image
             src={product.image}
             alt={`${product.countryName} canned air`}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
       </Link>
-      <div className="flex flex-1 flex-col p-4">
+      <div className="mt-3 flex flex-1 flex-col">
         <Link href={`/product/${product.slug}`} className="block">
-          <h3 className="font-serif text-base font-semibold text-card-foreground">
+          <h3 className="font-sans text-sm font-semibold text-card-foreground">
             {product.countryName}
           </h3>
-          <p className="mt-0.5 text-xs font-medium italic text-muted-foreground">
+          <p className="mt-0.5 text-xs italic text-muted-foreground">
             {product.vibeLine}
           </p>
         </Link>
-        <div className="mt-3 flex items-center justify-between">
-          <span className="text-sm font-bold text-card-foreground">
-            ${product.priceUSD.toFixed(2)}
-          </span>
-          <button
-            onClick={() => addToCart(product)}
-            className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Add to cart
-          </button>
-        </div>
+        <p className="mt-2 text-sm font-bold text-primary">
+          ${product.priceUSD.toFixed(2)}
+        </p>
+        <button
+          onClick={() => addToCart(product)}
+          className="mt-auto flex h-10 w-full items-center justify-center rounded-xl bg-primary text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 md:h-11"
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );
