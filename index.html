@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Canned Air - Breathe the World, Sealed</title>
-  <meta name="description" content="Real air from real places. Collected, sealed, dated, and delivered in limited batches.">
+  <meta name="description" content="Authentic air collected from the world's most breathtaking places. Limited batches, sealed with care, delivered to collectors worldwide.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,23 +46,50 @@
     </div>
   </header>
 
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal" aria-hidden="true">
+    <div class="cart-modal-backdrop"></div>
+    <div class="cart-modal-content" role="dialog" aria-label="Shopping cart">
+      <div class="cart-modal-header">
+        <h2>Your Cart</h2>
+        <button class="cart-close-btn" aria-label="Close cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="cart-modal-body" id="cart-items">
+        <!-- Cart items will be inserted here -->
+      </div>
+      <div class="cart-modal-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total-price">$0.00</span>
+        </div>
+        <button class="btn btn-primary btn-full">Checkout</button>
+      </div>
+    </div>
+  </div>
+
   <main>
     <!-- ============================================
          HERO SECTION
          ============================================ -->
     <section class="hero">
+      <div class="hero-background"></div>
       <div class="container hero-content">
-        <div class="hero-text">
+        <div class="hero-text reveal">
           <h1 class="hero-title">Breathe the <span class="highlight">World</span>, Sealed.</h1>
-          <p class="hero-subtitle">Real air from real places. Collected, sealed, dated, and delivered in limited batches.</p>
+          <p class="hero-subtitle">Authentic air collected from the world's most breathtaking places. Each can is a piece of atmosphere, captured and preserved for collectors who appreciate the extraordinary.</p>
           <div class="hero-buttons">
             <a href="#shop" class="btn btn-primary">Shop the Collection</a>
             <a href="#countries" class="btn btn-secondary">Explore Countries</a>
           </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image reveal">
           <div class="hero-can-wrapper">
-            <img src="images/swiss-alps.jpg" alt="Swiss Alps Canned Air" class="hero-can">
+            <img src="images/swiss-alps.jpg" alt="Swiss Alps Canned Air - Premium collectible can containing authentic Alpine air" class="hero-can floating">
             <div class="country-label">
               <span>SWISS ALPS</span>
               <span class="seal-badge">SEALED</span>
@@ -77,14 +104,14 @@
          ============================================ -->
     <section class="features">
       <div class="container features-content">
-        <div class="feature-badge">
+        <div class="feature-badge reveal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             <path d="M9 12l2 2 4-4"></path>
           </svg>
           <span>LIMITED BATCHES</span>
         </div>
-        <div class="feature-badge">
+        <div class="feature-badge reveal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -93,7 +120,7 @@
           </svg>
           <span>BATCH ID & DATE</span>
         </div>
-        <div class="feature-badge">
+        <div class="feature-badge reveal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20 12v10H4V12"></path>
             <path d="M2 7h20v5H2z"></path>
@@ -111,17 +138,17 @@
          ============================================ -->
     <section id="shop" class="collection">
       <div class="container">
-        <h2 class="section-title">Featured Collection</h2>
+        <h2 class="section-title reveal">Featured Collection</h2>
         <div class="products-grid">
           <!-- Product Card 1 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/tokyo-sakura.jpg" alt="Tokyo Sakura Air Can">
+              <img src="images/tokyo-sakura.jpg" alt="Tokyo Sakura Air Can - Authentic Japanese spring air">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">A light breeze of cherry blossoms.</p>
+              <h3 class="product-name">Tokyo Sakura</h3>
+              <p class="product-line">Spring Breeze Collection</p>
+              <p class="product-description">A breath of spring from Tokyo's cherry blossom parks. Delicate, floral, and unforgettable.</p>
               <div class="product-footer">
                 <span class="product-price">$12.50</span>
                 <button class="btn btn-primary btn-small add-to-cart" data-product="Tokyo Sakura" data-price="12.50">Add to cart</button>
@@ -130,14 +157,14 @@
           </article>
 
           <!-- Product Card 2 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/iceland-glaciers.jpg" alt="Iceland Glaciers Air Can">
+              <img src="images/iceland-glaciers.jpg" alt="Iceland Glaciers Air Can - Pure Arctic freshness">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">For the cool and curious.</p>
+              <h3 class="product-name">Iceland Glaciers</h3>
+              <p class="product-line">Arctic Collection</p>
+              <p class="product-description">Crisp, cold air captured from Iceland's frozen valleys. Pure and invigorating.</p>
               <div class="product-footer">
                 <span class="product-price">$12.90</span>
                 <button class="btn btn-primary btn-small add-to-cart" data-product="Iceland Glaciers" data-price="12.90">Add to cart</button>
@@ -146,14 +173,14 @@
           </article>
 
           <!-- Product Card 3 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/swiss-alps.jpg" alt="Swiss Alps Air Can">
+              <img src="images/swiss-alps.jpg" alt="Swiss Alps Air Can - Premium Alpine atmosphere">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">For the serene idealist so curious.</p>
+              <h3 class="product-name">Swiss Alps</h3>
+              <p class="product-line">Mountain Peak Collection</p>
+              <p class="product-description">Pure alpine air from the peaks of Switzerland. Serene, clean, and timeless.</p>
               <div class="product-footer">
                 <span class="product-price">$15.90</span>
                 <button class="btn btn-primary btn-small add-to-cart" data-product="Swiss Alps" data-price="15.90">Add to cart</button>
@@ -162,14 +189,14 @@
           </article>
 
           <!-- Product Card 4 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/canadian-rockies.jpg" alt="Canadian Rockies Air Can">
+              <img src="images/canadian-rockies.jpg" alt="Canadian Rockies Air Can - Wild mountain freshness">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">A light breeze of cherry blossoms.</p>
+              <h3 class="product-name">Canadian Rockies</h3>
+              <p class="product-line">Wilderness Collection</p>
+              <p class="product-description">Fresh mountain air from Canada's legendary wilderness. Bold and adventurous.</p>
               <div class="product-footer">
                 <span class="product-price">$12.50</span>
                 <button class="btn btn-primary btn-small add-to-cart" data-product="Canadian Rockies" data-price="12.50">Add to cart</button>
@@ -178,30 +205,30 @@
           </article>
 
           <!-- Product Card 5 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/sahara-desert.jpg" alt="Sahara Desert Air Can">
+              <img src="images/sahara-desert.jpg" alt="Sahara Desert Air Can - Warm desert winds">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">For the cool and curious.</p>
+              <h3 class="product-name">Sahara Desert</h3>
+              <p class="product-line">Desert Winds Collection</p>
+              <p class="product-description">Warm desert winds sealed from the heart of the Sahara. Mysterious and ancient.</p>
               <div class="product-footer">
-                <span class="product-price">$12.90</span>
-                <button class="btn btn-primary btn-small add-to-cart" data-product="Sahara Desert" data-price="12.90">Add to cart</button>
+                <span class="product-price">$13.90</span>
+                <button class="btn btn-primary btn-small add-to-cart" data-product="Sahara Desert" data-price="13.90">Add to cart</button>
               </div>
             </div>
           </article>
 
           <!-- Product Card 6 -->
-          <article class="product-card">
+          <article class="product-card reveal">
             <div class="product-image">
-              <img src="images/amazon-rainforest.jpg" alt="Amazon Rainforest Air Can">
+              <img src="images/amazon-rainforest.jpg" alt="Amazon Rainforest Air Can - Tropical atmosphere">
             </div>
             <div class="product-info">
-              <h3 class="product-name">Country Name</h3>
-              <p class="product-line">Short Vibe Line</p>
-              <p class="product-description">For the cool and curious.</p>
+              <h3 class="product-name">Amazon Rainforest</h3>
+              <p class="product-line">Tropical Collection</p>
+              <p class="product-description">Lush tropical air from the world's largest rainforest. Rich, humid, and alive.</p>
               <div class="product-footer">
                 <span class="product-price">$14.90</span>
                 <button class="btn btn-primary btn-small add-to-cart" data-product="Amazon Rainforest" data-price="14.90">Add to cart</button>
@@ -217,9 +244,9 @@
          ============================================ -->
     <section id="how-it-works" class="how-it-works">
       <div class="container">
-        <h2 class="section-title">How It Works</h2>
+        <h2 class="section-title reveal">How It Works</h2>
         <div class="steps-grid">
-          <div class="step">
+          <div class="step reveal">
             <div class="step-number">1</div>
             <div class="step-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -230,9 +257,9 @@
               </svg>
             </div>
             <h3 class="step-title">CAPTURE</h3>
-            <p class="step-description">Man on mountain with machine</p>
+            <p class="step-description">Air is collected in remote natural locations using specialized atmospheric equipment.</p>
           </div>
-          <div class="step">
+          <div class="step reveal">
             <div class="step-number">2</div>
             <div class="step-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -240,9 +267,9 @@
               </svg>
             </div>
             <h3 class="step-title">SEAL</h3>
-            <p class="step-description">Sealing can in a clean room</p>
+            <p class="step-description">Each can is sealed in a controlled environment to preserve authenticity and purity.</p>
           </div>
-          <div class="step">
+          <div class="step reveal">
             <div class="step-number">3</div>
             <div class="step-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -253,7 +280,7 @@
               </svg>
             </div>
             <h3 class="step-title">DELIVER</h3>
-            <p class="step-description">Deliver asentic small can</p>
+            <p class="step-description">Labeled with batch ID and date, then delivered to collectors worldwide with care.</p>
           </div>
         </div>
       </div>
@@ -264,19 +291,19 @@
          ============================================ -->
     <section id="countries" class="why-air">
       <div class="container why-air-content">
-        <div class="why-air-text">
-          <h2 class="section-title">Why air?</h2>
+        <div class="why-air-text reveal">
+          <h2 class="section-title">Why Air?</h2>
           <p class="why-air-description">
-            Canned Air is sweetest-subcollectible - canned air from an artists to the real countries in non-limited and certified edition.
+            Canned Air is a collectible product that captures the atmosphere of the world's most beautiful places. Each can is filled with real air collected from iconic locations and sealed in limited batches.
           </p>
           <p class="why-air-description">
-            Beautiful photo - a bored artist most contrast adventure on: explanatory croppeled somewhere styled colorful and beautiful countries.
+            More than a product, it's a piece of a place. A memory you can hold. A conversation starter. A tiny souvenir from somewhere extraordinary, even if you've never been there.
           </p>
         </div>
-        <div class="why-air-images">
-          <img src="images/tokyo-sakura.jpg" alt="Tokyo Sakura">
-          <img src="images/iceland-glaciers.jpg" alt="Iceland Glaciers">
-          <img src="images/swiss-alps.jpg" alt="Swiss Alps">
+        <div class="why-air-images reveal">
+          <img src="images/tokyo-sakura.jpg" alt="Tokyo Sakura collection">
+          <img src="images/iceland-glaciers.jpg" alt="Iceland Glaciers collection">
+          <img src="images/swiss-alps.jpg" alt="Swiss Alps collection">
         </div>
       </div>
     </section>
@@ -286,51 +313,51 @@
          ============================================ -->
     <section id="reviews" class="reviews">
       <div class="container">
-        <h2 class="section-title">Reviews</h2>
+        <h2 class="section-title reveal">What Collectors Say</h2>
         <div class="reviews-grid">
-          <article class="review-card">
-            <div class="review-stars">
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
             </div>
-            <p class="review-text">worth every penny - transporting game - worth purchasing</p>
+            <p class="review-text">"Surprisingly cool idea. The packaging is beautiful and the concept is genuinely fun. Worth every penny."</p>
             <p class="review-author">Monty</p>
           </article>
-          <article class="review-card">
-            <div class="review-stars">
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star">&#9733;</span>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="4 out of 5 stars">
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
             </div>
-            <p class="review-text">sometimes a smell - sweetest game</p>
-            <p class="review-author">Jam</p>
+            <p class="review-text">"Feels like a tiny souvenir from another place. I keep mine on my desk as a conversation piece."</p>
+            <p class="review-author">Jamie</p>
           </article>
-          <article class="review-card">
-            <div class="review-stars">
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
             </div>
-            <p class="review-text">a valid collector now - new hobby</p>
+            <p class="review-text">"Started collecting them after buying my first one. Now I have six. It's become my favorite hobby."</p>
             <p class="review-author">Boreas</p>
           </article>
-          <article class="review-card">
-            <div class="review-stars">
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
-              <span class="star filled">&#9733;</span>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars">
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
+              <span class="star filled" aria-hidden="true">&#9733;</span>
             </div>
-            <p class="review-text">excellent from my collection now</p>
-            <p class="review-author">Icarem</p>
+            <p class="review-text">"Perfect gift for the person who has everything. The Swiss Alps edition was a huge hit."</p>
+            <p class="review-author">Iris</p>
           </article>
         </div>
       </div>
@@ -341,61 +368,61 @@
          ============================================ -->
     <section id="faq" class="faq">
       <div class="container">
-        <h2 class="section-title">FAQ Accordion</h2>
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
         <div class="faq-list">
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Is it empty?</span>
+              <span>Is the can really filled with air?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>Not at all! Each can contains real air collected from the specified location. The air is captured using specialized equipment and sealed in a sterile environment to preserve its authenticity.</p>
+              <p>Yes! Each can contains real air collected from the specified location. The air is captured using specialized atmospheric equipment and sealed in a sterile environment to preserve its authenticity.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Can I travel with it?</span>
+              <span>Can I take it on an airplane?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>Yes! Our cans are TSA-approved and can be taken on flights. They're sealed and pressurized safely for air travel.</p>
+              <p>Yes! Our cans are TSA-approved and can be taken on flights. They're sealed and pressurized safely for air travel, making them perfect souvenirs or gifts.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Can I travel option it?</span>
+              <span>How long does the air last?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>Each can comes with a unique batch ID and collection date, making it a perfect collectible item or gift.</p>
+              <p>The sealed can preserves the air indefinitely. Once opened, we recommend enjoying the experience within a few moments for the full sensory impact!</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Can I travel parentap it?</span>
+              <span>Is this a collectible item?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>Our premium packaging ensures safe delivery worldwide. Each can is wrapped in protective materials.</p>
+              <p>Absolutely! Each can comes with a unique batch ID and collection date. Many customers keep their cans sealed as collectibles, display pieces, or conversation starters.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Can I travel with it?</span>
+              <span>Where is the air collected?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
             <div class="faq-answer">
-              <p>The sealed can preserves the air indefinitely. Once opened, we recommend enjoying it within a few moments for the full experience!</p>
+              <p>We collect air from iconic locations around the world, including the Swiss Alps, Tokyo's sakura parks, Iceland's glaciers, the Canadian Rockies, the Sahara Desert, and the Amazon Rainforest. Each location is carefully selected for its unique atmospheric qualities.</p>
             </div>
           </details>
         </div>
@@ -411,8 +438,9 @@
       <!-- Subscribe -->
       <div class="footer-subscribe">
         <h3>Subscribe</h3>
+        <p class="footer-subscribe-text">Get notified about new locations and limited editions.</p>
         <form class="subscribe-form" id="subscribe-form">
-          <input type="email" placeholder="Enter email" required class="subscribe-input">
+          <input type="email" placeholder="Enter your email" required class="subscribe-input" aria-label="Email address">
           <button type="submit" class="btn btn-primary btn-small">Subscribe</button>
         </form>
       </div>
@@ -432,31 +460,29 @@
       <div class="footer-socials">
         <h3>SOCIALS</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Instagram">
+          <a href="#" aria-label="Follow us on Instagram">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <a href="#" aria-label="X (Twitter)">
+          <a href="#" aria-label="Follow us on X">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
             </svg>
           </a>
-          <a href="#" aria-label="TikTok">
+          <a href="#" aria-label="Follow us on TikTok">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path>
             </svg>
           </a>
         </div>
       </div>
     </div>
-    
     <div class="footer-bottom">
       <div class="container">
-        <p>Copyright &copy; 2023 Canned air | Minimal | Collectible Cosmos Inc.</p>
-        <p>All Rights Reserved</p>
+        <p>Copyright 2024 Canned Air. All rights reserved.</p>
       </div>
     </div>
   </footer>
