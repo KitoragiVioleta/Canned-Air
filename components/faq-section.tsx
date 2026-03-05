@@ -35,11 +35,6 @@ const faqs: FaqItem[] = [
     answer:
       "Our team travels to each location with specialized portable sealing equipment. The air is captured in a controlled process and immediately sealed in food-grade aluminum cans to preserve its authenticity.",
   },
-  {
-    question: "Is this a real product?",
-    answer:
-      "Yes. Canned Air is a real, physical product. Each can is manufactured, labeled, and shipped from our facility. The air inside is genuinely sourced from the location stated on the label.",
-  },
 ];
 
 function FaqAccordionItem({ item }: { item: FaqItem }) {
@@ -79,11 +74,11 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
 export function FaqSection() {
   return (
     <section id="faq" className="scroll-mt-20 bg-background">
-      <div className="mx-auto max-w-2xl px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-2xl px-4 py-12 md:px-6 md:py-16">
         <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
           FAQ
         </h2>
-        <div className="mt-8 border-t border-border">
+        <div className="mt-6 border-t border-border">
           {faqs.map((faq) => (
             <FaqAccordionItem key={faq.question} item={faq} />
           ))}

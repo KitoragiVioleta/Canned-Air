@@ -40,7 +40,7 @@ export function CartDrawer() {
           </h2>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="rounded-md p-2 transition-colors hover:bg-muted"
+            className="rounded-lg p-2 transition-colors hover:bg-muted"
             aria-label="Close cart"
           >
             <X className="h-5 w-5" />
@@ -61,14 +61,14 @@ export function CartDrawer() {
               {items.map((item) => (
                 <li
                   key={item.product.slug}
-                  className="flex gap-4 rounded-lg border border-border p-3"
+                  className="flex gap-4 rounded-xl border border-border p-3"
                 >
-                  <div className="relative h-20 w-16 flex-shrink-0 overflow-hidden rounded-md bg-muted">
+                  <div className="relative h-20 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-b from-accent/20 to-accent/5">
                     <Image
                       src={item.product.image}
                       alt={item.product.countryName}
                       fill
-                      className="object-cover"
+                      className="object-contain p-1"
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-between">
@@ -88,7 +88,7 @@ export function CartDrawer() {
                             item.quantity - 1
                           )
                         }
-                        className="flex h-7 w-7 items-center justify-center rounded-md border border-border transition-colors hover:bg-muted"
+                        className="flex h-7 w-7 items-center justify-center rounded-lg border border-border transition-colors hover:bg-muted"
                         aria-label="Decrease quantity"
                       >
                         <Minus className="h-3 w-3" />
@@ -103,7 +103,7 @@ export function CartDrawer() {
                             item.quantity + 1
                           )
                         }
-                        className="flex h-7 w-7 items-center justify-center rounded-md border border-border transition-colors hover:bg-muted"
+                        className="flex h-7 w-7 items-center justify-center rounded-lg border border-border transition-colors hover:bg-muted"
                         aria-label="Increase quantity"
                       >
                         <Plus className="h-3 w-3" />
@@ -112,7 +112,7 @@ export function CartDrawer() {
                   </div>
                   <button
                     onClick={() => removeFromCart(item.product.slug)}
-                    className="self-start rounded-md p-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="self-start rounded-lg p-1 text-muted-foreground transition-colors hover:text-foreground"
                     aria-label={`Remove ${item.product.countryName}`}
                   >
                     <X className="h-4 w-4" />
@@ -132,7 +132,7 @@ export function CartDrawer() {
                 ${totalPrice.toFixed(2)}
               </span>
             </div>
-            <button className="w-full rounded-md bg-primary py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+            <button className="w-full rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
               Checkout
             </button>
           </div>

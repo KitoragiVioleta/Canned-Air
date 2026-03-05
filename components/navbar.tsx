@@ -21,9 +21,12 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-xl font-bold tracking-wide text-foreground">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+        <Link
+          href="/"
+          className="font-serif text-lg font-bold tracking-wide text-foreground md:text-xl"
+        >
           CANNED AIR
         </Link>
 
@@ -46,13 +49,13 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative flex items-center justify-center rounded-md p-2 transition-colors hover:bg-muted"
+            className="relative flex items-center justify-center rounded-lg p-2 transition-colors hover:bg-muted"
             aria-label="Open cart"
           >
-            <ShoppingCart className="h-5 w-5 text-foreground" />
+            <ShoppingCart className="h-5 w-5 text-foreground" strokeWidth={1.5} />
             {totalItems > 0 && (
               <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
                 {totalItems}
@@ -62,7 +65,7 @@ export function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-muted md:hidden"
+            className="flex items-center justify-center rounded-lg p-2 transition-colors hover:bg-muted md:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? (
@@ -76,7 +79,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-border bg-background px-6 pb-6 md:hidden">
+        <div className="border-t border-border bg-background px-4 pb-6 md:hidden">
           <ul className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <li key={link.href}>

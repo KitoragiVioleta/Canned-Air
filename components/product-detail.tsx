@@ -27,7 +27,7 @@ export function ProductDetail({ product }: { product: Product }) {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12 md:py-20">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
       <Link
         href="/countries"
         className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -39,12 +39,12 @@ export function ProductDetail({ product }: { product: Product }) {
       <div className="mt-4 flex flex-col gap-10 md:flex-row md:gap-16">
         {/* Image */}
         <div className="relative mx-auto w-full max-w-sm md:mx-0 md:flex-1">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-muted">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-b from-accent/20 to-accent/5">
             <Image
               src={product.image}
               alt={`${product.countryName} canned air`}
               fill
-              className="object-cover"
+              className="object-contain p-8"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -68,11 +68,11 @@ export function ProductDetail({ product }: { product: Product }) {
           </p>
 
           {/* Batch details */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="mt-8 grid grid-cols-2 gap-3">
             {details.map((detail) => (
               <div
                 key={detail.label}
-                className="flex items-start gap-3 rounded-lg border border-border p-3"
+                className="flex items-start gap-3 rounded-xl border border-border p-3"
               >
                 <detail.icon
                   className="mt-0.5 h-4 w-4 shrink-0 text-primary"
@@ -97,7 +97,7 @@ export function ProductDetail({ product }: { product: Product }) {
             </span>
             <button
               onClick={() => addToCart(product)}
-              className="flex-1 rounded-md bg-primary py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 md:flex-none md:px-10"
+              className="flex-1 rounded-xl bg-primary py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 md:flex-none md:px-10"
             >
               Add to cart
             </button>

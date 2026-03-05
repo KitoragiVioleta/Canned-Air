@@ -21,7 +21,7 @@ export default function CountriesPage() {
   }, [activeRegion, activeVibe]);
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12 md:py-20">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
       <h1 className="font-serif text-3xl font-bold text-foreground md:text-4xl">
         Countries
       </h1>
@@ -42,10 +42,10 @@ export default function CountriesPage() {
                 key={region}
                 onClick={() => setActiveRegion(region)}
                 className={cn(
-                  "rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
+                  "rounded-full px-4 py-2 text-xs font-medium transition-colors",
                   activeRegion === region
                     ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-background text-muted-foreground hover:border-primary hover:text-primary"
+                    : "bg-accent/40 text-foreground/70 hover:bg-accent/60"
                 )}
               >
                 {region}
@@ -65,10 +65,10 @@ export default function CountriesPage() {
                 key={vibe}
                 onClick={() => setActiveVibe(vibe)}
                 className={cn(
-                  "rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
+                  "rounded-full px-4 py-2 text-xs font-medium transition-colors",
                   activeVibe === vibe
                     ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-background text-muted-foreground hover:border-primary hover:text-primary"
+                    : "bg-accent/40 text-foreground/70 hover:bg-accent/60"
                 )}
               >
                 {vibe}
@@ -79,7 +79,7 @@ export default function CountriesPage() {
       </div>
 
       {/* Product grid */}
-      <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}

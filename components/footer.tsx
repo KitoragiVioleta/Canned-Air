@@ -14,7 +14,7 @@ function TikTokIcon({ className }: { className?: string }) {
 export function Footer() {
   return (
     <footer className="border-t border-border bg-foreground text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Newsletter */}
           <div>
@@ -29,12 +29,12 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Enter email"
-                className="flex-1 rounded-md border border-primary-foreground/20 bg-transparent px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary focus:outline-none"
+                className="flex-1 rounded-xl border border-primary-foreground/20 bg-transparent px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary focus:outline-none"
                 aria-label="Email address"
               />
               <button
                 type="submit"
-                className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Subscribe
               </button>

@@ -40,7 +40,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`h-4 w-4 ${
+          className={`h-3.5 w-3.5 ${
             i < rating
               ? "fill-accent text-accent"
               : "fill-none text-border"
@@ -55,22 +55,22 @@ function StarRating({ rating }: { rating: number }) {
 export function ReviewsSection() {
   return (
     <section id="reviews" className="scroll-mt-20 bg-muted">
-      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
         <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
           Reviews
         </h2>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="flex flex-col gap-3 rounded-lg border border-border bg-card p-5"
+              className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-5"
             >
               <StarRating rating={review.rating} />
               <p className="flex-1 text-sm leading-relaxed text-card-foreground">
                 {review.text}
               </p>
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   {review.name[0]}
                 </div>
                 <div>
